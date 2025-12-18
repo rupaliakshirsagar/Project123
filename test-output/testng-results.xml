@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-12-18T13:43:18 IST" name="Default suite" finished-at="2025-12-18T13:43:41 IST" duration-ms="23192">
+    <groups>
+    </groups>
+    <test started-at="2025-12-18T13:43:18 IST" name="Default test" finished-at="2025-12-18T13:43:41 IST" duration-ms="23192">
+      <class name="Package2.Project2.TestCase1_LoginToAmazon">
+        <test-method is-config="true" signature="launch(java.lang.String)[pri:0, instance:Package2.Project2.TestCase1_LoginToAmazon@24269709]" started-at="2025-12-18T13:43:18 IST" name="launch" finished-at="2025-12-18T13:43:21 IST" duration-ms="3370" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launch -->
+        <test-method signature="withValidCredentials()[pri:0, instance:Package2.Project2.TestCase1_LoginToAmazon@24269709]" started-at="2025-12-18T13:43:21 IST" name="withValidCredentials" finished-at="2025-12-18T13:43:40 IST" duration-ms="18579" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- withValidCredentials -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:Package2.Project2.TestCase1_LoginToAmazon@24269709]" started-at="2025-12-18T13:43:40 IST" name="quit" finished-at="2025-12-18T13:43:41 IST" duration-ms="1179" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- Package2.Project2.TestCase1_LoginToAmazon -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
