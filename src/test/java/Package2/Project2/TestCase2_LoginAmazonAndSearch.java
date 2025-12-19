@@ -2,14 +2,17 @@ package Package2.Project2;
 
 
 	
-	import org.testng.annotations.Test;
+	import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 
 import Utility.BaseClass;
+import Utility.ListenersLogic;
+import Utility.RetryLogic;
 
-	
+@Listeners(ListenersLogic.class)
 
 	public class TestCase2_LoginAmazonAndSearch extends BaseClass{
-	@Test
+		@Test(retryAnalyzer=RetryLogic.class)
 	public void loginandsearching() throws InterruptedException
 	{
 		HomePage homepage= new HomePage(driver);

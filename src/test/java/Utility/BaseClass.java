@@ -11,13 +11,13 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-public class BaseClass 
+public class BaseClass extends ListenersLogic
 {
-	public WebDriver driver;
+	
 	@Parameters("browser")
 	@BeforeMethod
 	
-	public void launch(@Optional("chrome")String nameOfBrowser)
+	public void launch(String nameOfBrowser)
 	{
 		if(nameOfBrowser.equals("chrome"))
 		{
