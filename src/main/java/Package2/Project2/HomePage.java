@@ -50,16 +50,36 @@ public class HomePage {
 	@FindBy(id = "twotabsearchtextbox")
 	private WebElement search;
 
+	@FindBy(xpath="//button[text()='Continue shopping']")
+	WebElement continueShopping;
 	
 	public void hoverOverOnAccountList(WebDriver driver)
 	{
+		System.out.println("DEBUG: hoverOverOnAccountList 1");
 		Actions a1=new Actions(driver);
+		System.out.println("DEBUG: hoverOverOnAccountList 2");
 		a1.moveToElement(accountslist).perform();
+		System.out.println("DEBUG: hoverOverOnAccountList 3");
 	}
-	public void clickToSignIn()
+	public void clickToSignIn(WebDriver driver)
 	{
+		System.out.println("DEBUG: clickToSignIn HomePage 1 ");
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.elementToBeClickable(signin)).click();
+		System.out.println("DEBUG: clickToSignIn HomePage 2");
+		try {
+			//wait.until(ExpectedConditions.elementToBeClickable(signin)).click();
+			hoverOverOnAccountList(driver);
+			signin.click();
+		}
+		catch(Exception e)
+		{
+			continueShopping.click();
+			hoverOverOnAccountList(driver);
+			signin.click();
+			
+		}
+		
+		
 
 		//signin.click();
 	}

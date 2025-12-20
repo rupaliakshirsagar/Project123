@@ -19,7 +19,10 @@ public class LoginPage {
 	private WebElement password;
 	
 	@FindBy(id="signInSubmit")
-	private WebElement signin;
+	private WebElement loginSingIn;
+	
+	@FindBy(xpath="//button[text()='Continue shopping']")
+	WebElement continueShopping;
 	
 	
 	public void enterUsername()
@@ -36,8 +39,21 @@ public class LoginPage {
 	}
 	public void clickToSignIn() throws InterruptedException
 	{
-		signin.click();
+		try {
+			System.out.println("DEBUG: Test if it is working 1 ");
+			loginSingIn.click();
+			System.out.println("DEBUG: Test if it is working 2");
 		//Thread.sleep(15000);
+		}
+		catch(Exception e)
+		{
+			System.out.println("DEBUG: Test if it is working 3");
+			continueShopping.click();
+			System.out.println("DEBUG: Test if it is working 4");
+			
+		}
+		
+		
 
 	}
 	

@@ -4,8 +4,8 @@
   <test thread-count="5" name="Test">
   <parameter name="browser" value="chrome"></parameter>
     <classes>
-      <class name="Package2.Project2.TestCase2_LoginAmazonAndSearch"/>
       <class name="Package2.Project2.TestCase1_LoginToAmazon"/>
+       <class name="Package2.Project2.TestCase2_LoginAmazonAndSearch"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
