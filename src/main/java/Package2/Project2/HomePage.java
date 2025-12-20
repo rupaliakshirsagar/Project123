@@ -2,6 +2,7 @@ package Package2.Project2;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -57,31 +58,27 @@ public class HomePage {
 	{
 		System.out.println("DEBUG: hoverOverOnAccountList 1");
 		Actions a1=new Actions(driver);
-		System.out.println("DEBUG: hoverOverOnAccountList 2");
+		System.out.println("DEBUG: hoverOverOnAccountList ");
 		a1.moveToElement(accountslist).perform();
-		System.out.println("DEBUG: hoverOverOnAccountList 3");
 	}
 	public void clickToSignIn(WebDriver driver)
 	{
 		System.out.println("DEBUG: clickToSignIn HomePage 1 ");
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		System.out.println("DEBUG: clickToSignIn HomePage 2");
-		try {
-			//wait.until(ExpectedConditions.elementToBeClickable(signin)).click();
-			hoverOverOnAccountList(driver);
-			signin.click();
-		}
-		catch(Exception e)
-		{
-			continueShopping.click();
-			hoverOverOnAccountList(driver);
-			signin.click();
-			
-		}
-		
-		
-
-		//signin.click();
+		  if (driver.findElements(By.xpath("//span[@class='nav-line-2 ']")).size() > 0) 
+		  {
+		        System.out.println("DEBUG: accountslist found, hovering and signing in");
+		        hoverOverOnAccountList(driver);
+		        signin.click();
+		  } 
+		  else 
+		  {
+		        System.out.println("DEBUG: accountslist NOT found, clicking Continue Shopping");
+		        continueShopping.click();
+		        hoverOverOnAccountList(driver);
+		        signin.click();		        
+		  }
 	}
 	public void SearchingProduct() throws InterruptedException
 	{
